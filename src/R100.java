@@ -11,7 +11,6 @@ public class R100 {
         int firstCharString;
         String filePathName = "F:\\textToAudio/готовое/";
 
-
         List<String> r100 = new ArrayList<>();
 
         List<String> slovoFormat = new ArrayList<>();
@@ -174,18 +173,23 @@ public class R100 {
 
 
         //String[] slovoString = {"*Слово_", "Первая_стРока_", "Вторая_строк_*_а."};
-        char[] chars = {'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я',
-                'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', '.', '_',
+        char[] chars = {'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н',
+                'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я',
+                'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р',
+                'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', '.', '_',
                 '-', '+', '*'};
 
-        char[] charsBig = {'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'};
-        char[] charsSmall = {'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'};
+        char[] charsBig = {'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О',
+                'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'};
+
+        char[] charsSmall = {'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о',
+                'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'};
 
 
         // Прочтение файла
-        FileReader fr = new FileReader("doc.txt");
+        FileReader fr = new FileReader("F:\\textToAudio/doc.txt");
         BufferedReader br = new BufferedReader(fr);
-        FileWriter fw = new FileWriter("docR100.txt");
+        FileWriter fw = new FileWriter("F:\\textToAudio/docR100.txt");
         String line;
 
         // Удаление пустых строк и пробелов в конце и в начале строк
@@ -203,7 +207,7 @@ public class R100 {
         fw.close(); // Закрытие BufferedReader
 
         // Перевод файла в коллекцию
-        List<String> linesR100 = Files.readAllLines(Paths.get("docR100.txt"));
+        List<String> linesR100 = Files.readAllLines(Paths.get("F:\\textToAudio/docR100.txt"));
         System.out.println("linesR100" + linesR100);
 
         //Замена пробелов на '_'
@@ -263,6 +267,7 @@ public class R100 {
                 System.out.println("Проверка первого символа" + charsStringSubstancii[0]);
                 r100.add(radasteid100Razdelitel.get("ЦЖ"));
                 firstCharString = 1; //Если первый символ в сторке большой, то начинать со второго символа
+
             }
             if (charsStringSubstancii[0] == 'Ё') {
                 System.out.println("Проверка первого символа" + charsStringSubstancii[0]);
@@ -341,16 +346,17 @@ public class R100 {
         int rdm = (int) (Math.random() * 5);
         r100.add("F:\\textToAudio/Sound/v" + rdm + ".wav");
 
-        //Блок визуальной проверки
 
+
+        //Блок визуальной проверки
         System.out.println();
         System.out.println("r100 " + r100);
 
         //метод удаляет ненужные символы
         List<String> result4 = deleteExcessChar(r100);
         String listString = String.join(", ", result4);
-        String listString2 = listString.replaceAll("\\s+","");
-        String listString3 = listString2.replaceAll(","," ");
+        String listString2 = listString.replaceAll("\\s+", "");
+        String listString3 = listString2.replaceAll(",", " ");
 
         System.out.println();
         System.out.println(listString3);

@@ -9,6 +9,7 @@ public class SimpleWindow extends JFrame {
         super("WINDOW 1");
         setDefaultCloseOperation(EXIT_ON_CLOSE); // закрывает окно нажатием на крестик
         TextToAudio textToAudio = new TextToAudio();
+        R100 r100 = new R100();
 
         JTextArea textArea = new JTextArea(40, 40);
         JButton click = new JButton("сlik");// Создание кнопки
@@ -52,6 +53,7 @@ public class SimpleWindow extends JFrame {
                 }
                 try {
                     textToAudio.textToAudio(text);
+                   // r100.r100(text);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }

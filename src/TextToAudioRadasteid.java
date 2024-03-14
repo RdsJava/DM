@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TextToAudioRadasteid {
 
-    public void textToAudioRadasteid(String file) throws IOException {
+    public void textToAudio(String file) throws IOException {
 
 
         String filePathName = "F:\\textToAudio/готовое/";

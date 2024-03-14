@@ -5,44 +5,24 @@ import java.awt.event.ActionListener;
 import java.io.*;
 
 public class SimpleWindow extends JFrame {
-   public SimpleWindow() {
-       setTitle("WINDOW 1");
+    SimpleWindow() {
+        super("WINDOW 1");
+        setDefaultCloseOperation(EXIT_ON_CLOSE); // закрывает окно нажатием на крестик
+        TextToAudio textToAudio = new TextToAudio();
+        R100 r100 = new R100();
 
+        JTextArea textArea = new JTextArea(40, 40);
+        JButton click = new JButton("сlik");// Создание кнопки
 
-
-        TextToAudioChiklo textToAudioChiklo = new TextToAudioChiklo();
-        TextToAudioNomernoi textToAudioNomernoi = new TextToAudioNomernoi();
-        TextToAudioRitmo textToAudioRitmo = new TextToAudioRitmo();
-        TextToAudioR100 textToAudioR100 = new TextToAudioR100();
-        TextToAudioRadasteid textToAudioRadasteid = new TextToAudioRadasteid();
-
-         // подобраны оптимальным образом с учетом предпочтений всех элементов, размещенных в этом окне.
-       JTextArea textArea = new JTextArea(80, 40);
-       JButton click = new JButton("сlik");// Создание кнопки
-       JCheckBox chiklo = new JCheckBox("Циклохладвит", false);
-       JCheckBox nomernoi = new JCheckBox("Номерной", false);
-       JCheckBox ritmo = new JCheckBox("Ритмохладавит", false);
-       JCheckBox radasteid100 = new JCheckBox("Радастеид - 100", false);
-       JCheckBox radasteid = new JCheckBox("Радастеид", false);
-
-
-
-       JPanel panel = new JPanel();
-       panel.setLayout(new FlowLayout()); // FlowLayout - Менеджер последовательного размещения
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout()); // FlowLayout - Менеджер последовательного размещения
 
 //Созданное поле добавляется в окно аплета методом add.
-       panel.add(textArea);
-       panel.add(click);
+        panel.add(textArea);
+        panel.add(click);
 
-       panel.add(chiklo);
-       panel.add(nomernoi);
-       panel.add(ritmo);
-       panel.add(radasteid100);
-       panel.add(radasteid);
-
-       setContentPane(panel); // Метод setContentPane(JPanel panel) позволяет заменить панель содержимого окна.
-       pack();
-
+        setContentPane(panel); // Метод setContentPane(JPanel panel) позволяет заменить панель содержимого окна.
+        pack(); // подобраны оптимальным образом с учетом предпочтений всех элементов, размещенных в этом окне.
 
 // метод для сохранения в файл введенного текста в поле
         click.addActionListener(new ActionListener() {
@@ -72,25 +52,12 @@ public class SimpleWindow extends JFrame {
                     throw new RuntimeException(ex);
                 }
                 try {
-                    if (chiklo.isSelected()) {
-                        textToAudioChiklo.textToAudioChiklo(text);
-                    }
-                    if (nomernoi.isSelected()) {
-                        textToAudioNomernoi.textToAudioNomernoi(text);
-                    }
-                    if (ritmo.isSelected()) {
-                        textToAudioRitmo.textToAudioRitmo(text);
-                    }
-                    if (radasteid100.isSelected()) {
-                        textToAudioR100.textToAudioR100(text);
-                    }
-                    if (radasteid.isSelected()) {
-                        textToAudioRadasteid.textToAudioRadasteid(text);
-                    }
+                    textToAudio.textToAudio(text);
+                   // r100.r100(text);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
             }
         });
-   }
+    }
 }

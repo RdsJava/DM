@@ -69,7 +69,6 @@ public class TextToAudioChiklo {
 // создание списка для сборки wav файла на ЦиклоХладавит (_оль.wav - Хладастея минус)
 // создание списка для сборки wav файла на Ритмохладавит (_ИРЪ.wav - Блокиратор)
 // создание списка для сборки wav файла на Номерной Хладавит (0.wav - Хладастея Даль)
-
         for (char character : characters)
             for (int i = 0; i < alphabet.length; i++)
                 if (character == alphabet[i]) {
@@ -86,10 +85,9 @@ public class TextToAudioChiklo {
         String listStringC = String.join(", ", ciklo);
         String listStringC2 = listStringC.replace("оль.wav, F:\\textToAudio/Chiklo_DM/","");
         System.out.println("Циклохладавит - " + listStringC2);
-
-              //System.out.println(Math.random() + " " + rdm); // рандом не превышает 5
-        System.out.println(characters); // визуально проверять на символы '_'
-       // System.out.println(ciklo);
+        //System.out.println(Math.random() + " " + rdm); // рандом не превышает 5
+        //System.out.println(characters); // визуально проверять на символы '_'
+        // System.out.println(ciklo);
 
         try {
             cikloH.concatenateFiles(ciklo, filePathName + fileName + "_Ц+ ");
@@ -98,8 +96,6 @@ public class TextToAudioChiklo {
         }
 
         File fileC = new File(filePathName + fileName + "_Ц+ ");
-
         renameFileF.rename(filePathName + fileName + "_Ц+ ", duration.durationFile(fileC), ".wav");
-
     }
 }

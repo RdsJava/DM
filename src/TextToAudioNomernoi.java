@@ -75,8 +75,8 @@ public class TextToAudioNomernoi {
 
 //визуальный блок проверки
         //System.out.println(Math.random() + " " + rdm); // рандом не превышает 5
-        System.out.println(characters); // визуально проверять на символы '_'
-        System.out.println(nomer);
+       // System.out.println(characters); // визуально проверять на символы '_'
+       // System.out.println(nomer);
 
         try {
             nomerH.concatenateFiles(nomer, filePathName + fileName + "_N+ ");

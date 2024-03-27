@@ -84,8 +84,8 @@ public class TextToAudioRitmo {
         System.out.println("Ритмохладавит - " + listStringR2);
 
         //System.out.println(Math.random() + " " + rdm); // рандом не превышает 5
-        System.out.println(characters); // визуально проверять на символы '_'
-        System.out.println(ritmo);
+        //System.out.println(characters); // визуально проверять на символы '_'
+       // System.out.println(ritmo);
 
         try {
             ritmoH.concatenateFiles(ritmo, filePathName + fileName + "_Р+ ");

@@ -27,6 +27,7 @@ public class TextToAudioRitmo {
         // Выборка первой строки из файла (для Названия сохраняемого файла)
         //Удаление пробелов в начале и в конце первой строки (для Названия сохраняемого файла)
         String firstStringNoWhiteSpaceStartEnd = file.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
+        firstStringNoWhiteSpaceStartEnd = firstStringNoWhiteSpaceStartEnd.replaceAll("[^A-Za-zА-Яа-я0-9]", "");
         String fileName = firstStringNoWhiteSpaceStartEnd.toUpperCase();
 
         // создание списка из текстового файла
@@ -34,6 +35,7 @@ public class TextToAudioRitmo {
 
 //Добавление '_' в конце строки с помощью StringBuilder
         for (String dd : lines) {
+            dd.replaceAll("[^A-Za-zА-Яа-я0-9]", "");
             builder.append(dd + "_");
         }
 
@@ -61,8 +63,6 @@ public class TextToAudioRitmo {
                 characters[characters.length - 1] = 0;
             }
         // Добавление фразы в начало
-        //ciklo.add("F:\\textToAudio/название/" + text2 + ".wav");
-
         ritmo.add("F:\\textToAudio/Начало_переизлучения.wav");
 
 // создание списка для сборки wav файла на Ритмохладавит (_ИРЪ.wav - Блокиратор)
@@ -81,7 +81,8 @@ public class TextToAudioRitmo {
 //визуальный блок проверки
         String listStringR = String.join(", ", ritmo);
         String listStringR2 = listStringR.replace("ИРЪ.wav, F:\\textToAudio/Ritmo_DM/", "");
-        System.out.println("Ритмохладавит - " + listStringR2);
+        String listStringR3 = listStringR2.replace("ИРЪ.wav", "");
+        System.out.println("Ритмохладавит - " + listStringR3);
 
         //System.out.println(Math.random() + " " + rdm); // рандом не превышает 5
         //System.out.println(characters); // визуально проверять на символы '_'

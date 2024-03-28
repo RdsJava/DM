@@ -26,6 +26,7 @@ public class TextToAudioNomernoi {
         // Выборка первой строки из файла (для Названия сохраняемого файла)
         //Удаление пробелов в начале и в конце первой строки (для Названия сохраняемого файла)
         String firstStringNoWhiteSpaceStartEnd = file.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
+        firstStringNoWhiteSpaceStartEnd = firstStringNoWhiteSpaceStartEnd.replaceAll("[^A-Za-zА-Яа-я0-9]", "");
         String fileName = firstStringNoWhiteSpaceStartEnd.toUpperCase();
 
         // создание списка из текстового файла

@@ -73,7 +73,7 @@ public class TextToAudioChiklo {
         for (char character : characters)
             for (int i = 0; i < alphabet.length; i++)
                 if (character == alphabet[i]) {
-                    ciklo.add("F:\\textToAudio/Chiklo_DM/" + alphabet[i] + "оль.wav");
+                    ciklo.add("F:\\textToAudio/Ciklo_DM/" + alphabet[i] + "оль.wav");
                 }
 // Добавление фразы в конце
         ciklo.add("F:\\textToAudio/Конец_переизлучения.wav");
@@ -84,7 +84,7 @@ public class TextToAudioChiklo {
 
 //визуальный блок проверки
         String listStringC = String.join(", ", ciklo);
-        String listStringC2 = listStringC.replace("оль.wav, F:\\textToAudio/Chiklo_DM/","");
+        String listStringC2 = listStringC.replace("оль.wav, F:\\textToAudio/Ciklo_DM/","");
         System.out.println("Циклохладавит - " + listStringC2);
 
               //System.out.println(Math.random() + " " + rdm); // рандом не превышает 5

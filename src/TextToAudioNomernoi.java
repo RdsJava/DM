@@ -64,7 +64,7 @@ public class TextToAudioNomernoi {
         for (char character : characters)
             for (int i = 0; i < alphabet.length; i++)
                 if (character == alphabet[i]) {
-                    nomer.add("F:\\textToAudio/Nomer_DM/" + i + ".wav");
+                    nomer.add("F:\\textToAudio/Nomernoi_DM/" + i + ".wav");
                 }
 // Добавление фразы в конце
         nomer.add("F:\\textToAudio/Конец_переизлучения.wav");
